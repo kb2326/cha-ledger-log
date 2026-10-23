@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forecast Ledger Scoreboard</title><style>
+:root { --bg: #f7f7f4; --fg: #1b1f1d; --muted: #5d6662; --line: #d8dcd6; --accent: #2f4aa0;
+        color-scheme: light; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #131615; --fg: #e5e9e6; --muted: #9ca5a0; --line: #2d3330; --accent: #8ea4f0;
+          color-scheme: dark; }
+}
+body { background: var(--bg); color: var(--fg); margin: 0; padding: 32px 16px 64px;
+       font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 860px; margin: 0 auto; }
+h1 { font-size: 28px; margin: 0 0 6px; } h2 { font-size: 19px; margin: 32px 0 8px; }
+p { max-width: 68ch; } small, .muted { color: var(--muted); }
+.wrap { overflow-x: auto; border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.big { font-size: 22px; font-weight: 600; color: var(--accent); }
+</style></head>
+<body><main>
+<h1>Forecast ledger scoreboard</h1>
+<p class="muted">Calibrated Health Agent · updated 2026-10-23T08:23 UTC ·
+days locked 1 · scored 0 · void 0
+· no journal 0</p>
+<p>Every morning six forecasters bet on one person's evening mood, energy and soreness (1–10).
+The bets are locked and hash-chained before the journal exists, then scored with the ranked
+probability score (lower is better). Skill above 0 beats the reference; below 0 loses to it.
+Results are published as-is, including forecasters that lose to persistence, and the real n
+is shown next to every number. The chain hashes are in <a href="chain.csv">chain.csv</a>.</p>
+<h2>Primary endpoint</h2>
+<p>gemini:gemini-3.5-flash-lite vs persistence, energy skill: <span class='big'>not yet</span> (n below 10; n = 0)</p>
+<h2>All forecasters</h2>
+<div class="wrap"><table>
+<thead><tr><th>Forecaster</th><th>Target</th><th>Scored</th><th>Mean RPS</th>
+<th>Skill vs climatology</th><th>Skill vs persistence</th></tr></thead>
+<tbody></tbody></table></div>
+<p class="muted">Pre-registered analysis plan: docs/ledger/analysis-plan.md in the project
+repository; its hash is the first line of chain.csv. Wellness forecasting, not medical advice.</p>
+</main></body></html>
