@@ -21,21 +21,26 @@ th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: v
 </style></head>
 <body><main>
 <h1>Forecast ledger scoreboard</h1>
-<p class="muted">Calibrated Health Agent · updated 2026-10-23T08:23 UTC ·
-days locked 1 · scored 0 · void 0
-· no journal 0</p>
-<p>Every morning six forecasters bet on one person's evening mood, energy and soreness (1–10).
+<p class="muted">Calibrated Health Agent · updated 2026-10-29T17:02 UTC ·
+days locked 7 · scored 6 · void 0
+· no journal 1</p>
+<p>Every morning seven forecasters bet on one person's evening mood, energy and soreness (1–10).
 The bets are locked and hash-chained before the journal exists, then scored with the ranked
 probability score (lower is better). Skill above 0 beats the reference; below 0 loses to it.
 Results are published as-is, including forecasters that lose to persistence, and the real n
 is shown next to every number. The chain hashes are in <a href="chain.csv">chain.csv</a>.</p>
 <h2>Primary endpoint</h2>
-<p>gemini:gemini-3.5-flash-lite vs persistence, energy skill: <span class='big'>not yet</span> (n below 10; n = 0)</p>
+<p>gemini:gemini-3.5-flash-lite vs persistence, energy skill: <span class='big'>not yet</span> (n below 10; n = 6)</p>
+<h2>Secondary endpoints</h2>
+<div class="wrap"><table>
+<thead><tr><th>Forecaster</th><th>Reference</th><th>Target</th><th>Paired n</th>
+<th>RPS skill (95% interval)</th></tr></thead>
+<tbody><tr><td>gemini:gemini-3.5-flash-lite</td><td>persistence</td><td>mood</td><td>n = 6</td><td>n below 10</td></tr><tr><td>gemini:gemini-3.5-flash-lite</td><td>persistence</td><td>soreness</td><td>n = 6</td><td>n below 10</td></tr><tr><td>gemini_notes:gemini-3.5-flash-lite</td><td>gemini:gemini-3.5-flash-lite</td><td>energy</td><td>n = 5</td><td>n below 10</td></tr></tbody></table></div>
 <h2>All forecasters</h2>
 <div class="wrap"><table>
 <thead><tr><th>Forecaster</th><th>Target</th><th>Scored</th><th>Mean RPS</th>
-<th>Skill vs climatology</th><th>Skill vs persistence</th></tr></thead>
-<tbody></tbody></table></div>
+<th>Skill vs climatology</th><th>Skill vs persistence</th><th>Mean log score</th></tr></thead>
+<tbody><tr><td>climatology</td><td>energy</td><td>n = 6</td><td>0.100</td><td>–</td><td>-0.00 <small>(n = 6)</small></td><td>2.090</td></tr><tr><td>climatology</td><td>mood</td><td>n = 6</td><td>0.110</td><td>–</td><td>-0.48 <small>(n = 6)</small></td><td>2.140</td></tr><tr><td>climatology</td><td>soreness</td><td>n = 6</td><td>0.080</td><td>–</td><td>-4.20 <small>(n = 6)</small></td><td>1.310</td></tr><tr><td>gemini:gemini-3.5-flash-lite</td><td>energy</td><td>n = 6</td><td>0.080</td><td>0.13 <small>(n = 6)</small></td><td>0.13 <small>(n = 6)</small></td><td>1.760</td></tr><tr><td>gemini:gemini-3.5-flash-lite</td><td>mood</td><td>n = 6</td><td>0.070</td><td>0.38 <small>(n = 6)</small></td><td>0.09 <small>(n = 6)</small></td><td>1.580</td></tr><tr><td>gemini:gemini-3.5-flash-lite</td><td>soreness</td><td>n = 6</td><td>0.050</td><td>0.41 <small>(n = 6)</small></td><td>-2.08 <small>(n = 6)</small></td><td>1.330</td></tr><tr><td>gemini_notes:gemini-3.5-flash-lite</td><td>energy</td><td>n = 5</td><td>0.060</td><td>0.42 <small>(n = 5)</small></td><td>0.48 <small>(n = 5)</small></td><td>1.520</td></tr><tr><td>gemini_notes:gemini-3.5-flash-lite</td><td>mood</td><td>n = 5</td><td>0.080</td><td>0.31 <small>(n = 5)</small></td><td>0.07 <small>(n = 5)</small></td><td>1.720</td></tr><tr><td>gemini_notes:gemini-3.5-flash-lite</td><td>soreness</td><td>n = 5</td><td>0.050</td><td>0.33 <small>(n = 5)</small></td><td>-2.55 <small>(n = 5)</small></td><td>1.390</td></tr><tr><td>persistence</td><td>energy</td><td>n = 6</td><td>0.100</td><td>0.00 <small>(n = 6)</small></td><td>–</td><td>2.510</td></tr><tr><td>persistence</td><td>mood</td><td>n = 6</td><td>0.070</td><td>0.32 <small>(n = 6)</small></td><td>–</td><td>2.180</td></tr><tr><td>persistence</td><td>soreness</td><td>n = 6</td><td>0.020</td><td>0.81 <small>(n = 6)</small></td><td>–</td><td>0.690</td></tr><tr><td>seasonal_naive</td><td>energy</td><td>n = 2</td><td>0.130</td><td>-0.01 <small>(n = 2)</small></td><td>0.19 <small>(n = 2)</small></td><td>5.230</td></tr><tr><td>seasonal_naive</td><td>mood</td><td>n = 2</td><td>0.200</td><td>-0.41 <small>(n = 2)</small></td><td>-0.24 <small>(n = 2)</small></td><td>9.210</td></tr><tr><td>seasonal_naive</td><td>soreness</td><td>n = 2</td><td>0.040</td><td>0.48 <small>(n = 2)</small></td><td>-2.10 <small>(n = 2)</small></td><td>0.910</td></tr></tbody></table></div>
 <p class="muted">Pre-registered analysis plan: docs/ledger/analysis-plan.md in the project
 repository; its hash is the first line of chain.csv. Wellness forecasting, not medical advice.</p>
 </main></body></html>
