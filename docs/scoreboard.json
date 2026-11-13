@@ -416,8 +416,8 @@
    ]
   }
  },
- "days_locked": 14,
- "days_no_outcome": 4,
+ "days_locked": 21,
+ "days_no_outcome": 11,
  "days_scored": 10,
  "days_voided": 0,
  "forecasters": [
@@ -731,7 +731,7 @@
    "target": "soreness"
   }
  ],
- "generated_at": "2026-11-06T00:32:13.250419Z",
+ "generated_at": "2026-11-13T00:31:58.009640Z",
  "primary": {
   "forecaster": "gemini:gemini-3.5-flash-lite",
   "n": 10,
